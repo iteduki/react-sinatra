@@ -1,24 +1,24 @@
-import React from "react"
-import "./App.css"
-import axios from "axios"
+import axios from "axios";
+import React from "react";
+import "./App.css";
 
 class App extends React.Component {
-  state = {
+  public state = {
     key1: "",
-    key2: ""
-  }
+    key2: "",
+  };
 
-  handleClick = async () => {
+  public handleClick = async () => {
     try {
-      const response = await axios.get("http://localhost:4567/")
-      const data = response.data
-      this.setState({ key1: data.key1, key2: data.key2 })
+      const response = await axios.get("http://localhost:4567/");
+      const data = response.data;
+      this.setState({ key1: data.key1, key2: data.key2 });
     } catch (e) {
-      alert(e)
+      alert(e);
     }
   }
 
-  render() {
+  public render() {
     return (
       <div className="App">
         <button style={{ width: 200, height: 35 }} onClick={this.handleClick}>
@@ -27,8 +27,8 @@ class App extends React.Component {
         <p>{this.state.key1}</p>
         <p>{this.state.key2}</p>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
